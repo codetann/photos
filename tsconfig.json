@@ -18,7 +18,9 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "*": ["src/*"]
+      "@stores": ["src/stores"],
+      "@lib": ["src/lib"],
+      "@hooks": ["src/hooks"]
     }
   },
   "include": ["src"],
