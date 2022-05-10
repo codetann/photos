@@ -1,4 +1,4 @@
-import { api, localstorage } from "@lib";
+import { api, localcache } from "@lib";
 import { useState, useEffect } from "react";
 
 const useApi = (endpoint: string) => {
@@ -7,7 +7,7 @@ const useApi = (endpoint: string) => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const cache = localstorage.read(endpoint);
+    const cache = localcache.read(endpoint);
 
     if (cache) {
       setData(cache);
@@ -18,7 +18,7 @@ const useApi = (endpoint: string) => {
     const fetchData = async () => {
       try {
         const response = await api.get(endpoint);
-        localstorage.write(endpoint, response.data);
+        localcache.write(endpoint, response.data);
         setData(response.data);
         setLoading(false);
       } catch (error: any) {
