@@ -20,7 +20,9 @@
     "paths": {
       "@stores": ["src/stores"],
       "@lib": ["src/lib"],
-      "@hooks": ["src/hooks"]
+      "@hooks": ["src/hooks"],
+      "@config": ["src/config"],
+      "@components": ["src/components"]
     }
   },
   "include": ["src"],

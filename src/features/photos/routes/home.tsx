@@ -1,17 +1,18 @@
-import { useApi } from "@hooks";
 import { useState, useEffect } from "react";
+import { useCuratedPhotos } from "../api";
 
 function Home() {
-  const [pokemon, setPokemon] = useState<any>("ditto");
-  const { data, loading, error } = useApi(`pokemon/${pokemon}`);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(20);
+  const { data, loading, error } = useCuratedPhotos(page, perPage);
 
   if (loading) return <div>Loading...</div>;
+
+  console.log(data);
 
   return (
     <div>
       <h1>Home</h1>
-      <button onClick={() => setPokemon("mew")}>Change</button>
-      <div>{data.name}</div>
     </div>
   );
 }
