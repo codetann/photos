@@ -22,7 +22,8 @@
       "@lib": ["src/lib"],
       "@hooks": ["src/hooks"],
       "@config": ["src/config"],
-      "@components": ["src/components"]
+      "@components": ["src/components"],
+      "@icons": ["assets/icons"]
     }
   },
   "include": ["src"],

@@ -3,7 +3,13 @@ import { Stack, VStack } from "@chakra-ui/react";
 function Navigation() {
   return (
     <Stack direction={["row", "column"]}>
-      <p>Navigation</p>
+      <p>Logo</p>
+      <Stack direction={["row", "column"]}>
+        <p>Home</p>
+        <p>About</p>
+        <p>Contact</p>
+      </Stack>
+      <button>switch</button>
     </Stack>
   );
 }
