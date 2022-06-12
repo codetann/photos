@@ -91,4 +91,65 @@ const PhotoIcon = createIcon({
   ),
 });
 
-export { HeartIcon, SearchIcon, PersonIcon, HomeIcon, PhotoIcon };
+const VideoIcon = createIcon({
+  displayName: "Video",
+  viewBox: "0 0 24 24",
+  path: (
+    <>
+      <rect
+        x="1"
+        y="1"
+        width="18"
+        height="20"
+        rx="2"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M1 11H19"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M1 6H5"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M1 16H5"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M15 6H19"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M15 16H19"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M14.5 1V21"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M5.5 1V21"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </>
+  ),
+});
+
+export { HeartIcon, SearchIcon, PersonIcon, HomeIcon, PhotoIcon, VideoIcon };
