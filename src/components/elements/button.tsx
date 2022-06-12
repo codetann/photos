@@ -1,7 +1,7 @@
 import { useStyleConfig, chakra, ButtonProps } from "@chakra-ui/react";
 
 const Button = (props: ButtonProps) => {
-  const styles = useStyleConfig("ButtonStyle", { variant: props.variant });
+  const styles = useStyleConfig("Button");
 
   return <chakra.button __css={styles} {...props} />;
 };

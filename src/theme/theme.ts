@@ -1,25 +1,19 @@
-import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
-import { mode } from "@chakra-ui/theme-tools";
-import { colors } from "./colors";
-import { components } from "./components/button";
+import { extendTheme } from "@chakra-ui/react";
+import { colors } from "./styles/colors";
+import { components } from "./components";
 
-const theme = extendTheme(
-  {
-    colors,
-    styles: {
-      global: (props: any) => ({
-        body: {
-          background: mode(
-            colors.grayscale.bg,
-            colors.grayscale["off-black"]
-          )(props),
+const theme = extendTheme({
+  colors,
+  components,
+  styles: {
+    global: {
+      body: {
+        _dark: {
+          bg: "alt.900",
         },
-      }),
+      },
     },
-    components,
   },
-
-  withDefaultColorScheme({ colorScheme: "cyan" })
-);
+});
 
 export { theme };

@@ -23,7 +23,8 @@
       "@hooks": ["src/hooks"],
       "@config": ["src/config"],
       "@components": ["src/components"],
-      "@icons": ["assets/icons"]
+      "@icons": ["assets/icons"],
+      "@routes": ["src/routes"]
     }
   },
   "include": ["src"],
