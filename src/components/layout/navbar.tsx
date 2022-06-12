@@ -1,4 +1,4 @@
-import { HomeIcon, PhotoIcon } from "@icons";
+import { HomeIcon, PhotoIcon, SearchIcon } from "@icons";
 import { HStack, Icon, Spacer, Text, VStack } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -17,17 +17,23 @@ const NavItem = ({ icon: Icon, title, isActive, showTitle }: NavItemProps) => (
     h="3rem"
     w="100%"
     rounded="xl"
-    justify="center"
+    justify="left"
     align="center"
     overflow="hidden"
+    spacing=".5rem"
+    transition={"all .2s"}
+    cursor="pointer"
+    _hover={{
+      opacity: 0.5,
+    }}
   >
-    <Icon h="1.5rem" w="1.5rem" fill="none" stroke="alt.200" />
-    {showTitle && <Spacer />}
+    <Icon h="1.3rem" w="3rem" fill="none" stroke="alt.200" />
+
     <motion.div
       animate={{
         width: "100%",
         opacity: showTitle ? 1 : 0,
-        transition: { duration: 0.5, delay: 0.2 },
+        transition: { duration: 0.3, delay: 0.1 },
         display: showTitle ? "flex" : "none",
       }}
     >
@@ -49,7 +55,12 @@ const NavBar = () => {
       animate={{
         width: isOpen ? "17rem" : "5rem",
       }}
-      transition={{ type: "spring", stiffness: 200, damping: 25 }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      }}
+      style={{ position: "fixed" }}
     >
       <VStack
         h="100vh"
@@ -63,6 +74,7 @@ const NavBar = () => {
       >
         <HStack>Logo</HStack>
         <VStack spacing={5} align="start" w="100%">
+          <NavItem icon={SearchIcon} title="" />
           <NavItem icon={HomeIcon} title={"Home"} showTitle={isOpen} isActive />
           <NavItem icon={PhotoIcon} title={"Photos"} showTitle={isOpen} />
         </VStack>
